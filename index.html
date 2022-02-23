@@ -10,6 +10,7 @@
     <script>
         let num = Math.random();
         console.log(num);
+    
         function computerPlay() {
             if (num <= 0.33) {
                 return "Rock";
@@ -19,7 +20,38 @@
                 return "Scissors";
             } 
         }
-            console.log(computerPlay(num));
+        console.log("The computer chose:");
+        console.log(computerPlay(num));
+
+        const playerSelection = "Rock";
+        const computerSelection = computerPlay(num);
+        function playRound(playerSelection, computerSelection) {
+            if (playerSelection.toLowerCase() == "rock" && computerSelection == "Rock") {
+                return "It's a tie.";
+            } else if (playerSelection.toLowerCase() == "rock" && computerSelection == "Paper") {
+                return "Sorry, you lose.";
+            } else if (playerSelection.toLowerCase() == "rock" && computerSelection == "Scissors") {
+                return "You win!!!";
+            } else if (playerSelection.toLowerCase() == "paper" && computerSelection == "Rock") {
+                return "You win!!!";
+            } else if (playerSelection.toLowerCase() == "paper" && computerSelection == "Paper") {
+                return "It's a tie.";
+            } else if (playerSelection.toLowerCase() == "paper" && computerSelection == "Scissors") {
+                return "Sorry, you lose.";
+            } else if (playerSelection.toLowerCase() == "scissors" && computerSelection == "Rock") {
+                return "Sorry, you lost...";
+            } else if (playerSelection.toLowerCase() == "scissors" && computerSelection == "Paper") {
+                return "You win!!!";
+            } else if (playerSelection.toLowerCase() == "scissors" && computerSelection == "Scissors") {
+                return "It's a tie.";
+            } else {
+                return "Something isn't right.";
+            }
+        }
+        console.log("You chose:");
+        console.log(playerSelection);
+        console.log("Therefore:");
+        console.log(playRound(playerSelection, computerSelection));
     </script>
 </body>
 </html>
